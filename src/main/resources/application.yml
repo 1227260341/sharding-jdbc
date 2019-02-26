@@ -1,0 +1,61 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: websocket
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:/www/ecampus/static/
+      ,file:///D:\project\zj-websocket\zj-websocket-chat/files/
+    
+  datasource:
+    test1:
+      driverClassName: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/test_msg1?characterEncoding=utf-8
+#      url: jdbc:mysql://localhost:3306/test_msg1?characterEncoding=utf-8
+      username: root
+      password: root
+    test2:
+      driverClassName: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/test_msg2?characterEncoding=utf-8
+#      url: jdbc:mysql://localhost:3306/test_msg2?characterEncoding=utf-8
+      username: root
+      password: root
+      
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      
+      
+#    driverClassName: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3307/zj_websocket?characterEncoding=utf-8
+#    username: root
+#    password: root
+#  jackson:
+#    serialization:
+#      indent-output: true
+
+##show sql
+#logging:
+#  level:
+#    com:
+#      zj:
+#        modules:
+#          mapper: debug
+
+#  Hibernate 格式化sql
+#  jpa:
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        show_sql: true
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.zj.modules.domain
+  type-handlers-package: com.zj.modules.mapper
+  mapper-locations: classpath:com.zj.modules.mapper/*.xml
+    
+    
+    
